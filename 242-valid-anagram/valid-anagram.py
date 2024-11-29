@@ -8,13 +8,10 @@ class Solution(object):
         if(len(s) != len(t)):
             return False
         else:
-            list = []
+            s = sorted(s)
+            t = sorted(t)
             for i in range(len(s)):
-                list.append(s[i])
-            for j in range(len(t)):
-                if(t[j] not in list):
+                if(s[i] != t[i]):
                     return False
-                else:
-                    list.remove(t[j])
             else:
                 return True
