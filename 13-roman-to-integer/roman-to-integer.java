@@ -1,8 +1,8 @@
 class Solution {
     public int romanToInt(String s) {
         int result = 0;
-        for(int i = 0;i<s.length() - 1;i++){
-            if(i<s.length() && getValue(s.charAt(i)) < getValue(s.charAt(i+1)) ){
+        for(int i = 0;i<s.length();i++){
+            if(i+1<s.length() && getValue(s.charAt(i)) < getValue(s.charAt(i+1)) ){
                 result = result - getValue(s.charAt(i));
             }else{
                 int value = getValue(s.charAt(i));
@@ -10,7 +10,7 @@ class Solution {
             }
             
         }
-        return result + getValue(s.charAt(s.length() - 1));    
+        return result ;    
     }
     public int getValue(char button){
         switch(button){
